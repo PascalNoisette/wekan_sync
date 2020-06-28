@@ -8,22 +8,14 @@ module MyPlugin
 
         issue = context[:issue]
 
+
         SwaggerClient.configure do |config|
           # Configure API key authorization: UserSecurity
+          config.api_key["Authorization"] = "BzraqQ8ZvCc8IWPLwq-mim3Q1ebLArZB4JRj5gUnuki"
           config.host = "172.17.0.1"
           config.scheme = "http"
-        end
-
-
-        api_instance = SwaggerClient::LoginApi.new
-        loginResult = api_instance.login("admin", "adminadmin")
-
-
-        SwaggerClient.configure do |config|
-          # Configure API key authorization: UserSecurity
-          config.api_key['Authorization'] = loginResult.token
           # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-          #config.api_key_prefix['Authorization'] = 'Bearer'
+          config.api_key_prefix['Authorization'] = 'Bearer'
         end
 
 

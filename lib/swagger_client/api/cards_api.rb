@@ -528,13 +528,11 @@ module SwaggerClient
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
+        :form_params => post_body,
+        :body => form_params,
         :auth_names => auth_names,
         :return_type => 'InlineResponse2002')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CardsApi#new_card\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
+      @api_client.config.logger.info "API called: CardsApi#new_card\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       return data, status_code, headers
     end
   end

@@ -125,7 +125,9 @@ module SwaggerClient
         end
       end
 
+      
       request = Typhoeus::Request.new(url, req_opts)
+      Rails.logger.info request
       download_file(request) if opts[:return_type] == 'File'
       request
     end
